@@ -55,7 +55,7 @@ public class DatabaseConfig implements EnvironmentAware {
                 applicationContext.getResources("classpath:META-INF/mybatis/mapper/*.xml"));
         factoryBean.setTypeAliasesPackage("dev.be.goodgid.model"); // TODO : Modify to the appropriate value
 
-        Interceptor plugin = (Interceptor) applicationContext.getBean("sqlQueryLoggingInterceptor");
+        Interceptor plugin = (Interceptor) applicationContext.getBean("queryLoggingInterceptor");
         factoryBean.setPlugins((Interceptor[]) ArrayUtils.add(null, plugin));
 
         return factoryBean;

@@ -42,7 +42,7 @@ import dev.be.goodgid.util.ObjectEncryptionUtil;
         @Signature(type = Executor.class, method = "update", args = { MappedStatement.class, Object.class })
 })
 @Component
-public class SqlQueryLoggingInterceptor implements Interceptor {
+public class QueryLoggingInterceptor implements Interceptor {
 
     public static final Logger LOGGER = LoggerFactory.getLogger("SqlQueryLogInterceptor");
     public static final int DEFAULT_LINE_SIZE = 1024 * 4; // 4KB
