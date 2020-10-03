@@ -23,7 +23,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @Configuration
 @EnableTransactionManagement
 @MapperScan(
-        basePackages = "dev.be.goodgid.repository.oltp", // [TODO] : Modify to the appropriate value
+        basePackages = "dev.be.goodgid.repository.oltp", // TODO : Modify to the appropriate value
         sqlSessionFactoryRef = "sqlSessionFactory")
 @PropertySources({
         @PropertySource("classpath:META-INF/database/datasource.properties"),
@@ -53,7 +53,7 @@ public class DatabaseConfig implements EnvironmentAware {
                 applicationContext.getResource("classpath:META-INF/mybatis/mybatis-config.xml"));
         factoryBean.setMapperLocations(
                 applicationContext.getResources("classpath:META-INF/mybatis/mapper/*.xml"));
-        factoryBean.setTypeAliasesPackage("dev.be.goodgid.model"); // [TODO] : Modify to the appropriate value
+        factoryBean.setTypeAliasesPackage("dev.be.goodgid.model"); // TODO : Modify to the appropriate value
 
         Interceptor plugin = (Interceptor) applicationContext.getBean("sqlQueryLoggingInterceptor");
         factoryBean.setPlugins((Interceptor[]) ArrayUtils.add(null, plugin));
